@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="evene.gui.MainController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Events">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="133.0" layoutY="56.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <left>
+                              <GridPane vgap="5.0" BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="openAdd" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openAddEvent" text="Add Event" />
+                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Show Event" GridPane.rowIndex="1" />
+                                    <Button fx:id="deleteEvent" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteFromTable" text="Delete Event" GridPane.rowIndex="2" />
+                                    <Button fx:id="refresh" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#refetch" text="Refresh()" GridPane.rowIndex="3" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                           </left>
+                           <center>
+                              <TableView fx:id="eventTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="titre" prefWidth="75.0" text="TITLE" />
+                                    <TableColumn fx:id="adresse" prefWidth="75.0" text="ADDRESSE" />
+                                    <TableColumn fx:id="dateStart" prefWidth="75.0" text="DATE START" />
+                                    <TableColumn fx:id="dateEnd" prefWidth="75.0" text="DATE END" />
+                                    <TableColumn fx:id="content" prefWidth="75.0" text="CONTENT" />
+                                    <TableColumn fx:id="std" prefWidth="75.0" text="PRICE STD" />
+                                    <TableColumn fx:id="vip" prefWidth="75.0" text="PRICE VIP" />
+                                    <TableColumn fx:id="tickets" prefWidth="75.0" text="TICKETS" />
+                                    <TableColumn fx:id="image" prefWidth="75.0" text="IMAGES" />
+                                    <TableColumn fx:id="views" prefWidth="75.0" text="VIEWS" />
+                                </columns>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Reservation">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="278.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <left>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="addReservation" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addReservationOpen" text="Add Reservation" />
+                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Show Reservation" GridPane.rowIndex="1" />
+                                    <Button fx:id="deleteReservation" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteFunctionReservation" text="Delete Reservation" GridPane.rowIndex="2" />
+                                    <Button fx:id="refresh" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#refetch" text="Refresh()" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </left>
+                           <center>
+                              <TableView fx:id="reservationTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="id_res" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="res_res" prefWidth="75.0" text="RESERVATION" />
+                                    <TableColumn fx:id="nb_res" prefWidth="75.0" text="NB TICKETS" />
+                                    <TableColumn fx:id="holder_res" prefWidth="75.0" text="HOLDER" />
+                                    <TableColumn fx:id="type_res" prefWidth="75.0" text="TYPE" />
+                                    <TableColumn fx:id="event_res" prefWidth="75.0" text="EVENT ID" />
+                                    <TableColumn fx:id="user_res" prefWidth="75.0" text="USER ID" />
+                                </columns>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
